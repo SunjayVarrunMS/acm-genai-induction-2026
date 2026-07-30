@@ -1,4 +1,4 @@
-"""India's Got Latent — a persona chatbot with an unmistakable act and a memory for callbacks.
+"""India's Got Latent, a persona chatbot with an unmistakable act and a memory for callbacks.
 
 Run with: streamlit run app.py
 """
@@ -16,7 +16,7 @@ PERSONAS = {
     "RoastBot": (
         "You are RoastBot, a stand-up comic on India's Got Latent. Fire back witty, "
         "sarcastic roasts at whatever the judges say, no matter the topic. Stay clever "
-        "and playful, never genuinely mean or offensive — the panel should laugh, not "
+        "and playful, never genuinely mean or offensive; the panel should laugh, not "
         "wince. Keep responses short and punchy, like a real comeback."
     ),
     "ShakespeareBot": (
@@ -25,7 +25,7 @@ PERSONAS = {
         "question is. Stay fully in character."
     ),
     "Emoji Translator Bot": (
-        "You are Emoji Translator Bot. Convert your entire response into emoji-speak — "
+        "You are Emoji Translator Bot. Convert your entire response into emoji-speak: "
         "reply almost entirely in emoji sequences, with only the bare minimum text "
         "needed to keep the meaning clear."
     ),
@@ -37,7 +37,7 @@ PERSONAS = {
     ),
 }
 
-st.set_page_config(page_title="India's Got Latent — Chatbot Act", page_icon="🎤")
+st.set_page_config(page_title="India's Got Latent (Chatbot Act)", page_icon="🎤")
 
 
 def init_state():
@@ -72,7 +72,7 @@ def render_sidebar():
             "Groq API key",
             value=os.environ.get("GROQ_API_KEY", ""),
             type="password",
-            help="Get one free at console.groq.com — or set GROQ_API_KEY as an env var instead.",
+            help="Get one free at console.groq.com, or set GROQ_API_KEY as an env var instead.",
         )
         model_name = st.selectbox(
             "Model",
@@ -87,7 +87,7 @@ def render_sidebar():
             list(PERSONAS.keys()),
             key="persona",
             disabled=st.session_state.show_started,
-            help="Locks in once the show starts — no do-overs, remember?",
+            help="Locks in once the show starts, no do-overs, remember?",
         )
 
         if not st.session_state.show_started:
@@ -107,7 +107,7 @@ def render_sidebar():
 
 def main():
     init_state()
-    st.title("🎤 India's Got Latent — Chatbot Act")
+    st.title("🎤 India's Got Latent (Chatbot Act)")
     st.caption(
         "No script, no re-runs. Pick a persona, start the show, and talk to the bot live."
     )
